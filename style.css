@@ -4,6 +4,7 @@
     font-size: 25px;
 }
 header {
+    display: flex;
     position: absolute;
     align-items: flex-start;
     padding: 10px;
@@ -71,10 +72,9 @@ main {
 }
 
 
-.hide2 {
+.hide {
     display: none;
 }
-
 
 
 
