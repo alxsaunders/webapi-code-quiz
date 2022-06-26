@@ -5,14 +5,15 @@
 }
 header {
     display: flex;
-    position: absolute;
+    justify-content: space-between;
     align-items: flex-start;
     padding: 10px;
+    color: white;
     
 }
-header a {
+/* header a {
     color: white;
-}
+} */
 
 body {
     padding: 0;
@@ -75,6 +76,52 @@ main {
 .hide {
     display: none;
 }
+
+#result {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+
+}
+
+#result2 {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+
+}
+
+#result div {
+    display: flex;
+    position: absolute;
+    bottom: -20px;
+    color: green;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    
+    
+}
+
+#result2 div {
+    display: flex;
+    position: absolute;
+    bottom: -20px;
+    color: red;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+
+
+
+
+
+
+
 
 
 
