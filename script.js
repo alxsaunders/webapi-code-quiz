@@ -8,6 +8,7 @@ const startingtime = 1;
 let time = startingtime * 60
 
 
+
 const timerEl = document.getElementById('timer')
 
 
@@ -18,6 +19,10 @@ let shuffledQuestions, currentQuestionIndex
 
 
 startbutton.addEventListener("click", startQuiz)
+answerButtonEL.addEventListener("click", () => {
+    currentQuestionIndex++,
+    nextQuestion()
+} )
 
 function startQuiz() {
     console.log('Started')
@@ -91,28 +96,27 @@ function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
     setStatusText(document.getElementById('result'), correct)
-    Array.from(answerButtonEL.children).forEach(button => {
-      setStatusClass(button, button.dataset.correct)
+    // Array.from(answerButtonEL.children).forEach(button => {
+    //   setStatusText(button, button.dataset.correct)
       
-    })
-  
+    // })
+//   if (shuffledQuestions.length)
+
   }
   
   function setStatusText(element, correct) {
-    clearStatusClass(element)
     if (correct) {
         correct == true
       element.innerHTML= "correct"
     } else {
       element.innerHTML="wrong"
+      time -= 10
+     
 
     }
   }
   
-  function clearStatusClass(element) {
-    element.innerHTML=''
-    element.innerHTML=''
-  }
+
 
 
 var questions = [
@@ -128,23 +132,53 @@ var questions = [
 
 
     },
-{
-    question: 'What data types can a function return?',
-    answers: [
-        {text: 'string', correct: false},
-         {text: 'number', correct: true}
-    
-    ]
-},
+    {
+        question: 'Which of the following keywords is used to define a variable in Javascript?',
+        answers: [
+            {text: 'var', correct: false},
+             {text: 'let', correct: false},
+             {text: 'Both A and B', correct: true},
+             {text: 'None of the above', correct: false}
 
-{
-    question: 'What data types can a function return?',
-    answers: [
-        {text: 'string', correct: false},
-         {text: 'number', correct: true}
-    
-    ]
-}
+]
 
+
+    },
+    {
+        question: 'What will be the output of the following code snippet?',
+        answers: [
+            {text: 'const', correct: true},
+             {text: 'var', correct: false},
+             {text: 'let', correct: false},
+             {text: 'constant', correct: false}
+
+]
+
+
+    },
+    {
+        question: 'Javascript is an _______ language?',
+        answers: [
+            {text: 'Object-Oriented', correct: true},
+             {text: 'Object-Based', correct: false},
+             {text: 'Procedural', correct: false},
+             {text: 'None of the above', correct: false}
+
+]
+
+
+    },
+    {
+        question: 'Which of the following are closures in Javascript?',
+        answers: [
+            {text: 'Variables', correct: false},
+             {text: 'All of the above', correct: true},
+             {text: 'Objects', correct: false},
+             {text: 'Functions', correct: false}
+
+]
+
+
+    },
 
 ]
