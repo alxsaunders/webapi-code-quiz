@@ -38,29 +38,17 @@ function startQuiz() {
     }
    
 
-
-
-
-
-
-
-
+}
 function updatetimerEl() {
-    
-    
-
-    
-    
-
+        
     timerEl.innerHTML = time;
    
     time--;
-    
 
     // let refreshIntervalId = setInterval(updatetimerEl,1000);
 
     }
-}
+
 
 
 
@@ -102,6 +90,7 @@ function selectAnswer(e) {
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     
   }else {
+    localStorage.setItem('recenttime', time)
     return window.location.assign('end.html')
   }
 
