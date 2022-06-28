@@ -108,6 +108,13 @@ function selectAnswer(e) {
 
     }
   }
+
+  function GotoHighScores(){
+    return window.location.assign('highscores.html')
+  }
+ 
+  highscore.addEventListener("click", GotoHighScores);
+
   
 
 
