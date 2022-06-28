@@ -1,6 +1,6 @@
 const highScoresList = document.querySelector('#highScoresList')
 const highScores = JSON.parse(localStorage.getItem('highScores')) || []
-
+const clear = document.getElementById('clear')
 
 highScoresList.innerHTML = 
 highScores.map(score => {
@@ -11,6 +11,12 @@ highScores.map(score => {
 
 .join('')    
 
+clear.addEventListener("click", Clearhighscores)
+
+function Clearhighscores(){
+
+window.localStorage.clear()
+}
 // passwordBtnEl.on('click', function () {
 //     var newPassword = passwordGenerator(15);
 //     passwordDisplayEl.text(newPassword);
