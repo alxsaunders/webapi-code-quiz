@@ -5,7 +5,7 @@ const result = document.getElementById('result')
 const questionEL = document.getElementById('question')
 const answerButtonEL = document.getElementById('answer-buttons')
 let time = 75; //minutes * 60 seconds
-; //update every 1 second
+var url = ""
 
 
 
@@ -101,7 +101,10 @@ function selectAnswer(e) {
  
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     
+  }else {
+    return window.location.assign('end.html')
   }
+
     
 
   }
