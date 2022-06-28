@@ -4,8 +4,8 @@ const highscore = document.getElementById('highscore')
 const result = document.getElementById('result')
 const questionEL = document.getElementById('question')
 const answerButtonEL = document.getElementById('answer-buttons')
-const startingtime = 1;
-let time = startingtime * 60
+let time = 75; //minutes * 60 seconds
+; //update every 1 second
 
 
 
@@ -30,36 +30,36 @@ function startQuiz() {
     shuffledQuestions= questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionConEL.classList.remove('hide')
-    highscore.classList.add('hide')
     updatetimerEl()
-    setInterval(updatetimerEl, 1000);
-    if (time < 0) { //stop the setInterval whe time = 0 for avoid negative time
-        clearInterval(updatetimerEl)
-    }
     nextQuestion()
+    let refreshIntervalId = setInterval(updatetimerEl, 1000)
+    if (time < 0) { //stop the setInterval whe time = 0 for avoid negative time
+        clearInterval(refreshIntervalId);
+    }
+   
 
 
 
 
 
 
-}
 
 
 function updatetimerEl() {
     
     
 
-    const minutes = Math.floor(time /60);
-    let seconds = time % 60;
+    
+    
 
-    timerEl.innerHTML = `${minutes}:${seconds}`;
+    timerEl.innerHTML = time;
    
     time--;
+    
 
     // let refreshIntervalId = setInterval(updatetimerEl,1000);
 
-   
+    }
 }
 
 
@@ -96,22 +96,23 @@ function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
     setStatusText(document.getElementById('result'), correct)
-    // Array.from(answerButtonEL.children).forEach(button => {
-    //   setStatusText(button, button.dataset.correct)
+    
       
-    // })
-//   if (shuffledQuestions.length)
+ 
+  if (shuffledQuestions.length > currentQuestionIndex + 1) {
+    
+  }
+    
 
   }
   
   function setStatusText(element, correct) {
     if (correct) {
         correct == true
-      element.innerHTML= "correct"
+      element.innerHTML= "correct";
     } else {
-      element.innerHTML="wrong"
+      element.innerHTML="wrong";
       time -= 10
-     
 
     }
   }
