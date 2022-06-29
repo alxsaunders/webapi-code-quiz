@@ -6,6 +6,7 @@ const highscore = document.getElementById('highscore')
 const result = document.getElementById('result')
 const questionEL = document.getElementById('question')
 const answerButtonEL = document.getElementById('answer-buttons')
+const quizTitle = document.getElementById('QuizTitle')
 let time = 75; //70 seconds
 
 
@@ -30,6 +31,7 @@ function startQuiz() {
     shuffledQuestions= questions.sort(() => Math.random() - .6)
     currentQuestionIndex = 0
     questionConEL.classList.remove('hide')
+    quizTitle.classList.add('hide')
     updatetimerEl()
     nextQuestion()
     let refreshIntervalId = setInterval(updatetimerEl, 1000)
