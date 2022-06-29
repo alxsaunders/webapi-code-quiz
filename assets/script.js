@@ -103,9 +103,9 @@ function selectAnswer(e) {
   function setStatusText(element, correct) {
     if (correct) {
         correct == true//if correct show correct if answer is wrong show wrong
-      element.innerHTML= "correct";
+      element.innerHTML= "Correct!";
     } else {
-      element.innerHTML="wrong";
+      element.innerHTML="Wrong!";
       time -= 10
 
     }
