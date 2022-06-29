@@ -25,3 +25,8 @@ THEN I can save my initials and my score
 ```
 
 Screenshot
+![ScreenShot](./assets/images/screenshot.png)
+
+
+Deployed Page
+Live Deploy Link: [CLICK HERE](https://alxsaunders.github.io/webapi-code-quiz/)

@@ -93,7 +93,7 @@ function selectAnswer(e) {
     
   }else {
     localStorage.setItem('recenttime', time)//set local storage of time if question end 
-    return window.location.assign('end.html')
+    return window.location.assign('assets/end.html')
   }
 
     
@@ -112,7 +112,7 @@ function selectAnswer(e) {
   }
 
   function GotoHighScores(){//allow to go highscore html through click evemt
-    return window.location.assign('highscores.html')
+    return window.location.assign('assets/highscores.html')
   }
  
   highscore.addEventListener("click", GotoHighScores);
